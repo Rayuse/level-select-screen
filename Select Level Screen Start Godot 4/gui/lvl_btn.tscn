@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://gjsfs5kl13vm"]
+
+[sub_resource type="GDScript" id="GDScript_s8bd6"]
+script/source = "extends Button
+
+var original_size := scale
+var grow_size := Vector2(1.1, 1.1)
+
+func _on_lvl_btn_mouse_entered() -> void:
+	grow_btn(grow_size, .1)
+
+
+func _on_lvl_btn_mouse_exited() -> void:
+	grow_btn(original_size, .1)
+	
+	
+func grow_btn(end_size: Vector2, duration: float) -> void:
+	var tween := create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, 'scale', end_size, duration)
+
+
+"
+
+[node name="LvlBtn" type="Button"]
+custom_minimum_size = Vector2i(200, 150)
+offset_right = 200.0
+offset_bottom = 150.0
+pivot_offset = Vector2(100, 75)
+text = "Level 1"
+script = SubResource("GDScript_s8bd6")
+
+[connection signal="mouse_entered" from="." to="." method="_on_lvl_btn_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_lvl_btn_mouse_exited"]

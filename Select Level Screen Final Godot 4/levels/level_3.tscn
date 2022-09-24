@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c048d88cyxlxw"]
+
+[ext_resource type="PackedScene" uid="uid://e5ykmegi3x63" path="res://levels/level_1.tscn" id="1_hvnus"]
+
+[node name="Level1" instance=ExtResource("1_hvnus")]
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(0.309804, 0.321569, 0.705882, 1)
+
+[node name="Label" parent="CenterContainer" index="0"]
+offset_left = 498.0
+offset_top = 290.0
+offset_right = 653.0
+offset_bottom = 357.0
+text = "Level 3"

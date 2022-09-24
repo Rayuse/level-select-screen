@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://e5ykmegi3x63"]
+
+[ext_resource type="Theme" uid="uid://d15rsb5jyxtgp" path="res://gui/default_theme.tres" id="1_fbgil"]
+[ext_resource type="PackedScene" uid="uid://gjsfs5kl13vm" path="res://gui/lvl_btn.tscn" id="2_v0rrf"]
+
+[node name="Level1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fbgil")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.380392, 0.705882, 0.639216, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+offset_left = 562.0
+offset_top = 326.0
+offset_right = 717.0
+offset_bottom = 393.0
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="BackBtn" parent="." instance=ExtResource("2_v0rrf")]
+custom_minimum_size = Vector2i(80, 60)
+offset_left = 33.0
+offset_top = 27.0
+offset_right = 162.0
+offset_bottom = 109.0
+pivot_offset = Vector2(65, 41)
+text = "Back"
+level_path = "res://gui/level_select_screen.tscn"
